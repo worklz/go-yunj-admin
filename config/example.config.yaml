@@ -2,10 +2,10 @@ app:
   mode: debug
   port: :8082
   url: "http://goadmin.iyunj.cn"
-  name: 云静博客
-  keywords: 云静,博客,TP6,Admin
-  description: 用云静Admin TP6快速构建自己的应用
-  version: 1.1.59
+  name: 云静Admin（go）
+  keywords: 云静,Admin,go,golang
+  description: 用云静Admin快速构建自己的应用
+  version: 1.0.0
   author: 
     qq: 1071446619
     email: 1071446619@qq.com
@@ -26,29 +26,7 @@ redis:
   port: 6379
   db: 0
   password: "123456"
-  prefix: "yj.admin:"  # 缓存key前缀
+  prefix: "go.yj.admin:"  # 缓存key前缀
   max_idle: 30  # 连接池中最大的空闲连接数
   max_active: 30  # 连接池中最大的活动连接数
   idle_timeout: 200 # 空闲连接的超时时间
-
-# 默认值
-default:
-  article:
-    cover: "/static/blog/imgs/informal-essay.png" # 文章默认封面
-  category: # 默认分类
-    id: -1
-    pid: 0
-    name: "随笔"
-    img: "/static/admin/imgs/informal-essay.png"
-
-# 百度站点地图
-baidu:
-  site_map_site: "blog.iyunj.cn"
-  site_map_token: "HpNxVryEdL51pRB7"
-
-# Elasticsearch
-elasticsearch:
-  enable: true
-  index_prefix: "blog_" # 索引前缀
-  hosts: 
-    - "http://192.168.171.201:9200"

@@ -40,27 +40,4 @@ type Config struct {
 		MaxActive   int           `mapstructure:"max_active"`
 		IdleTimeout time.Duration `mapstructure:"idle_timeout"`
 	}
-	// 默认值
-	Default struct {
-		Article struct {
-			Cover string
-		}
-		Category struct {
-			Id   int
-			Pid  int
-			Name string
-			Img  string
-		}
-	}
-	// 百度站点地图
-	Baidu struct {
-		SiteMapSite  string `mapstructure:"site_map_site"`
-		SiteMapToken string `mapstructure:"site_map_token"`
-	}
-	// elasticsearch
-	Elasticsearch struct {
-		Enable      bool     `mapstructure:"enable"`
-		IndexPrefix string   `mapstructure:"index_prefix"`
-		Hosts       []string `mapstructure:"hosts"`
-	}
 }
