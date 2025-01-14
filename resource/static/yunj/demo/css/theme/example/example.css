@@ -1,0 +1,7 @@
+:root {
+    --primary-color: #ff0000;
+}
+
+.login input[type=submit], .login input[type=button]{
+    background-color: #e81717 !important;
+}

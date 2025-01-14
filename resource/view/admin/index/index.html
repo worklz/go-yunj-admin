@@ -1,0 +1,170 @@
+<!doctype html>
+<html class="yunj-admin-sm">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="icon" href="{:yunj_setting('sys.favicon')}" type="img/x-ico"/>
+    <title>{:yunj_setting('sys.title')}</title>
+    <meta name="keywords" content="{:yunj_setting('sys.keywords')}">
+    <meta name="description" content="{:yunj_setting('sys.description')}">
+    {include file="$yunjInit" /}
+    <link rel="stylesheet" href="/static/yunj/css/index.min.css?v={$Think.YUNJ_VERSION}">
+</head>
+<body class="index">
+<!-- header -->
+<div class="header">
+    <div class="logo">
+        <a href="javascript:void(0);" title="{:yunj_setting('sys.title')}">{:yunj_setting('sys.title')}</a>
+    </div>
+    <div class="action">
+        <div class="left-open">
+            <a href="javascript:void(0);"><i title="展开左侧栏" class="yunj-icon yunj-icon-list"></i></a>
+        </div>
+        <ul class="top-menu mobile-hide">
+            {:admin_top_menu_html_layout()}
+        </ul>
+        <div class="right-box">
+            <ul class="top-menu align-right">
+                <li class="top-menu-item mobile-hide">
+                    {// :view('../vendor/yunj/admincore-tp6/src/app/demo/view/public/parent/header_right_nav.html')->getContent()}
+                </li>
+<!--                <li class="top-menu-item">-->
+<!--                    <div class="file-download">-->
+<!--                        <div class="icon-box" title="文件下载">-->
+<!--                            <i class="yunj-icon yunj-icon-download"></i>-->
+<!--                            <span>...</span>-->
+<!--                        </div>-->
+<!--                        <div class="items-box">-->
+<!--                            <div class="item">-->
+<!--                                <div class="top">-->
+<!--                                    <div class="item-desc">-->
+<!--                                        <span class="time">09:00</span>-->
+<!--                                        <span class="name">文件名.xls</span>-->
+<!--                                    </div>-->
+<!--                                    <div class="item-action">-->
+<!--                                        <i class="yunj-icon yunj-icon-remove remove" title="取消"></i>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="bottom">-->
+<!--                                    <div class="layui-progress layui-progress-big" lay-showpercent="true">-->
+<!--                                        <div class="layui-progress-bar" lay-percent="8%"></div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="item">-->
+<!--                                <div class="top">-->
+<!--                                    <div class="item-desc">-->
+<!--                                        <span class="time">09:00</span>-->
+<!--                                        <span class="name">文件名.xls</span>-->
+<!--                                    </div>-->
+<!--                                    <div class="item-action">-->
+<!--                                        <i class="yunj-icon yunj-icon-remove remove" title="取消"></i>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="bottom">-->
+<!--                                    <div class="layui-progress layui-progress-big" lay-showpercent="true">-->
+<!--                                        <div class="layui-progress-bar" lay-percent="70%"></div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="items-mask"></div>-->
+<!--                    </div>-->
+<!--                </li>-->
+<!--                <li class="top-menu-item mobile-hide">-->
+<!--                    <a href="javascript:void(0);" title="便签">-->
+<!--                        <i class="layui-icon layui-icon-note" style="font-size: 14px;"></i>-->
+<!--                    </a>-->
+<!--                </li>-->
+                {if admin_member_auth_check('yunj_top_right_action_global_search')}
+                <li class="top-menu-item">
+                    <div class="global-search">
+                        <div class="input-box">
+                            <i class="layui-icon layui-icon-search"></i>
+                            <input type="text" placeholder="全局搜索..." name="global_search_keywords">
+                        </div>
+                        <div class="result">
+                            <div class='item' data-key="no_result">无搜索结果</div>
+                            {:admin_global_search_result_html_layout()}
+                        </div>
+                        <div class="result-mask"></div>
+                    </div>
+                </li>
+                {/if}
+                <li class="top-menu-item">
+                    <input type="hidden" id="member_id" value="{$memberId}">
+                    <a href="javascript:void(0);" title="你好！{$memberDesc}">
+                        <span class="desc">你好！{$memberDesc}</span><i class="layui-icon layui-icon-down"></i>
+                    </a>
+                    <ul class="top-menu-sub">
+                        <li class="top-menu-item">
+                            <a href="javascript:void(0);"
+                               onclick="yunj.openPopup('{:build_url(\'yunjAdminMemberProfile\')}','个人信息')"
+                               title="个人信息">
+                                <span class="desc">个人信息</span>
+                            </a>
+                        </li>
+                        <li class="top-menu-item">
+                            <a href="{:build_url('yunjAdminMemberLogout')}" title="退出/切换帐号">
+                                <span class="desc">退出/切换帐号</span>
+                            </a>
+                        </li>
+                        {if is_mobile()}
+                        <li class="top-menu-item">
+                            <a href="javascript:void(0);" title="主题设置" class="set-theme">
+                                <span class="desc">主题设置</span>
+                            </a>
+                        </li>
+                        {/if}
+                    </ul>
+                </li>
+                <li class="top-menu-item mobile-hide set-theme">
+                    <a href="javascript:void(0);" title="主题设置">
+                        <i class="layui-icon layui-icon-theme" style="font-size: 14px;"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- menu -->
+<div class="left-nav">
+    <div id="side-nav">
+        <ul id="nav">
+            {:admin_sidebar_menu_html_layout()}
+        </ul>
+    </div>
+</div>
+
+<!-- page-content -->
+<div class="page-content">
+    <div class="layui-tab tab" lay-filter="xbs_tab" lay-allowClose="true">
+        <ul class="layui-tab-title">
+            <li lay-id="home" class="layui-this home">
+                <i class="layui-icon">&#xe68e;</i>我的桌面
+            </li>
+        </ul>
+        <div class="layui-unselect layui-form-select layui-form-selected" id="tab_close_panel">
+            <dl>
+                <dd data-type="this">关闭当前</dd>
+                <dd data-type="other">关闭其它</dd>
+                <dd data-type="all">关闭全部</dd>
+            </dl>
+        </div>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <iframe src="{:yunj_config('admin.dashboard_url')}" frameborder="0" scrolling="yes"
+                        class="x-iframe"></iframe>
+            </div>
+        </div>
+        <div id="tab_close_panel_content_mask"></div>
+    </div>
+    <div id="left_nav_open_page_content_mask"></div>
+</div>
+<script type="text/javascript" src="/static/yunj/js/theme.min.js?v={$Think.YUNJ_VERSION}" charset="utf-8"></script>
+<script type="text/javascript" src="/static/yunj/js/page.min.js?v={$Think.YUNJ_VERSION}" charset="utf-8"></script>
+</body>
+</html>

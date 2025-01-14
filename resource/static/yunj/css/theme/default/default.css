@@ -1,0 +1,12 @@
+:root {
+    --primary-color: #009688;
+}
+
+.header {
+    background-color: #222 !important;
+}
+
+/* 顶部菜单 */
+.header .top-menu > .top-menu-item:hover > a{
+    color: var(--primary-color) !important;
+}

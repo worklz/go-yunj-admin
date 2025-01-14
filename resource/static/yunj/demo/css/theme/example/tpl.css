@@ -1,0 +1,15 @@
+:root {
+    --demo-tpl-primary-color: #ff0000;
+}
+
+/* 主题模板头部样式 */
+.theme-box li.example .t{
+    background: var(--demo-tpl-primary-color);
+}
+/* 主题模板左部样式 */
+.theme-box li.example .l{
+    background: #EEEEEE;
+}
+.theme-box li.example .l .item{
+    background: var(--demo-tpl-primary-color);
+}

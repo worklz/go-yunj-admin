@@ -1,0 +1,15 @@
+:root {
+    --default-tpl-primary-color: #009688;
+}
+
+.theme-box li.default .t {
+    background: #222;
+}
+
+.theme-box li.default .l {
+    background: #EEEEEE;
+}
+
+.theme-box li.default .l .item {
+    background: var(--default-tpl-primary-color);
+}

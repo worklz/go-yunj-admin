@@ -1,0 +1,97 @@
+@font-face {
+    font-family: "yunj-icon"; /* Project id 1954410 */
+    src: url('iconfont.eot?t=1708334065636'); /* IE9 */
+    src: url('iconfont.eot?t=1708334065636#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('iconfont.woff2?t=1708334065636') format('woff2'),
+    url('iconfont.woff?t=1708334065636') format('woff'),
+    url('iconfont.ttf?t=1708334065636') format('truetype'),
+    url('iconfont.svg?t=1708334065636#yunj-icon') format('svg');
+}
+
+.yunj-icon {
+    font-family: "yunj-icon" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.yunj-icon-download:before {
+    content: "\e601";
+}
+
+.yunj-icon-remove:before {
+    content: "\e63a";
+}
+
+.yunj-icon-rename:before {
+    content: "\e669";
+}
+
+.yunj-icon-fall:before {
+    content: "\e69e";
+}
+
+.yunj-icon-rise:before {
+    content: "\e69f";
+}
+
+.yunj-icon-click:before {
+    content: "\e655";
+}
+
+.yunj-icon-login:before {
+    content: "\e6bd";
+}
+
+.yunj-icon-baidu:before {
+    content: "\e651";
+}
+
+.yunj-icon-sub:before {
+    content: "\e600";
+}
+
+.yunj-icon-time:before {
+    content: "\e8c4";
+}
+
+.yunj-icon-category:before {
+    content: "\e62f";
+}
+
+.yunj-icon-eye:before {
+    content: "\e611";
+}
+
+.yunj-icon-pen:before {
+    content: "\e67b";
+}
+
+.yunj-icon-list:before {
+    content: "\e646";
+}
+
+.yunj-icon-clear:before {
+    content: "\e946";
+}
+
+.yunj-icon-submit:before {
+    content: "\e645";
+}
+
+.yunj-icon-back:before {
+    content: "\e614";
+}
+
+.yunj-icon-refresh:before {
+    content: "\e648";
+}
+
+.yunj-icon-sort:before {
+    content: "\e608";
+}
+
+.yunj-icon-sort-circle:before {
+    content: "\e650";
+}
+
