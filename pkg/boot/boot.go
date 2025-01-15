@@ -21,6 +21,8 @@ func init() {
 	InitDb()
 	// 初始化Redis连接
 	InitRedis()
+	// 初始化设置
+	InitSetting()
 	// 初始化验证器
 	InitValidator()
 	// 启动定时任务

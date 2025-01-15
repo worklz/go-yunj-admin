@@ -19,6 +19,7 @@ func InitRouter() *gin.Engine {
 	// 静态路由
 	router.Static("/static", "./resource/static")
 	router.Static("/upload", "./storage/upload")
+	router.StaticFile("/favicon.ico", "./resource/static/favicon.ico")
 
 	// 后台路由
 	AdminRouter(router)

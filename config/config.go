@@ -16,6 +16,13 @@ type Config struct {
 			QQ    string `mapstructure:"qq"`
 			Email string
 		}
+		Admin struct {
+			UseDemo        bool `mapstructure:"use_demo"`
+			Entrance       string
+			DashboardUrl   string   `mapstructure:"dashboard_url"`
+			StyleFileList  []string `mapstructure:"style_file_list"`
+			ScriptFileList []string `mapstructure:"script_file_list"`
+		}
 	}
 	// 数据库配置
 	Database struct {
@@ -40,4 +47,13 @@ type Config struct {
 		MaxActive   int           `mapstructure:"max_active"`
 		IdleTimeout time.Duration `mapstructure:"idle_timeout"`
 	}
+}
+
+// 获取后台安全入口，默认为"/admin"
+func (c *Config) GetAppAdminEntrance() string {
+	entrance := c.App.Admin.Entrance
+	if entrance == "" {
+		entrance = "/admin"
+	}
+	return entrance
 }

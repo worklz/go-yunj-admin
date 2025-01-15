@@ -1,10 +1,13 @@
 package model
 
-import "yunj/app/enum/state"
+import (
+	"time"
+	"yunj/app/enum/state"
+)
 
 type Model struct {
-	Id             int              `gorm:"primary_key;autoIncrement;column:id" json:"id,omitempty" form:"id"`
-	CreateTime     int64            `gorm:"column:create_time" json:"create_time,omitempty" form:"create_time"`
-	LastUpdateTime int64            `gorm:"column:last_update_time" json:"last_update_time,omitempty" form:"last_update_time"`
-	State          state.StateConst `gorm:"column:state" json:"state" form:"state"`
+	Id        uint64           `gorm:"primary_key;autoIncrement;column:id" json:"id,omitempty" form:"id"`
+	CreatedAt time.Time        `gorm:"column:created_at" json:"created_at,omitempty" form:"created_at"`
+	UpdatedAt time.Time        `gorm:"column:updated_at" json:"updated_at,omitempty" form:"updated_at"`
+	State     state.StateConst `gorm:"column:state" json:"state" form:"state"`
 }

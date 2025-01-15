@@ -15,6 +15,7 @@ var (
 	Logger   *logrus.Logger
 	MySQL    *gorm.DB
 	Redis    *redis.Pool
+	Setting  *map[string]map[string]any // {group:{key:value,...},...}
 	Validate *validator.Validate
 	Corn     *cron.Cron
 )

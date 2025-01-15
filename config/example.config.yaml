@@ -9,24 +9,31 @@ app:
   author: 
     qq: 1071446619
     email: 1071446619@qq.com
+  admin: # 后台配置
+    use_demo: true  # 是否使用demo（调整后重新启动程序）。
+    entrance: "/admin" # 后台安全入口（调整后重新启动程序）。只能通过指定安全入口登录后台,如: admin。注意留空默认为：admin'
+    dashboard_url: "/admin/yunj/demo/welcome" # 桌面仪表盘地址。该地址页面不可关闭
+    style_file_list: [] # 页面加载的css文件路径/地址，如：'/test_1.css,/test_2.css'
+    script_file_list: [] # 页面加载的js文件路径/地址，如：'/test_1.js,/test_2.js'
+
 
 database: 
   type: mysql
-  host: 192.168.171.201
+  host: 192.168.110.133
   port: 3306
-  user: db_yunj_admin
+  user: db_yunj_admin_go
   password: 123456
-  name: db_yunj_admin
+  name: db_yunj_admin_go
   table_prefix: yj_
   max_idle_conns: 10  # 空闲连接池中连接的最大数量
   max_open_conns: 100 # 打开数据库连接的最大数量
 
-redis:
+redis: 
   host: 192.168.171.201
   port: 6379
   db: 0
   password: "123456"
-  prefix: "go.yj.admin:"  # 缓存key前缀
+  prefix: "yj.admin.go:"  # 缓存key前缀
   max_idle: 30  # 连接池中最大的空闲连接数
   max_active: 30  # 连接池中最大的活动连接数
   idle_timeout: 200 # 空闲连接的超时时间
